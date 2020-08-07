@@ -19,7 +19,7 @@ class NewTodoForm extends Component {
     handleSubmit(evt){
         evt.preventDefault();
 
-        this.props.createTodo({task: this.state.task, id: uuid()})
+        this.props.createTodo({...this.state.task, id: uuid()})
 
         this.setState({
             task: ""
