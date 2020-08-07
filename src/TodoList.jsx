@@ -27,7 +27,7 @@ class TodoList extends Component {
         return ( 
             <div>
                 <h1>Todo List</h1>
-                <NewTodoForm create={this.create}/>
+                <NewTodoForm createTodo={this.create}/>
                 <ul>
                     {
                         todos
