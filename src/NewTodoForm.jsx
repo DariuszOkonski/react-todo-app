@@ -37,6 +37,7 @@ class NewTodoForm extends Component {
                     onChange={this.handleChange}
                     required
                 />
+                <button>Add Todo</button>
             </form>
          );
     }
