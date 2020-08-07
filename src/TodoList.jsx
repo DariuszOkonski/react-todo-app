@@ -7,19 +7,27 @@ class TodoList extends Component {
         super(props);
         this.state = {
             todos: [
-                {task: "Walk The Fish"},
-                {task: "Groom Chickens"}
+                {task: "Walk The Fish", id: 1},
+                {task: "Groom Chickens", id: 2}
             ]
         }
+        this.create = this.create.bind(this);
+    }
+
+    create(newTodo) {
+        this.setState({
+            todos: [...this.state.todos, newTodo]
+        })
     }
 
     render() { 
-        const todos = this.state.todos.map(todo => <Todo task={todo.task}/>)
+        const todos = this.state.todos.map(todo => 
+            <Todo key={todo.id} task={todo.task}/>)
 
         return ( 
             <div>
                 <h1>Todo List</h1>
-                <NewTodoForm/>
+                <NewTodoForm create={this.create}/>
                 <ul>
                     {
                         todos
